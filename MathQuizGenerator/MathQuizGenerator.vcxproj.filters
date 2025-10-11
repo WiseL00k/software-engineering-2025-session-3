@@ -15,8 +15,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MathQuizGenerator.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\QuizGenerator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="inc\QuizGenerator.h">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fraction.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Expression.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AnswerChecker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\App.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\Fraction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Expression.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\App.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\AnswerChecker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
