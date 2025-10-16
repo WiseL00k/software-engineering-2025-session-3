@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include "Expression.h"
 
  /**
@@ -46,4 +47,4 @@ public:
     void saveAnswers(const std::string& filename = "Answers.txt") const;
 };
 
-#endif // QUIZ_GENERATOR_H
+#endif // QUIZ_GENERATOR_H#pragma once
