@@ -43,6 +43,7 @@ void QuizGenerator::generateAll() {
     cout << "题目生成完成，共生成 " << quizzes.size() << " 道题目" << endl;
 }
 
+
 void QuizGenerator::saveExercises(const string& filename) const {
     ofstream file(filename);
 
