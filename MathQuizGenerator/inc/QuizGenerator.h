@@ -26,7 +26,7 @@ public:
      * @param n 要生成的题目数量
      * @param r 数值范围
      */
-    QuizGenerator(int n, int r);
+    QuizGenerator(int n, int r) : numQuestions(n), range(r) {};
 
     /**
      * @brief 生成所有题目
