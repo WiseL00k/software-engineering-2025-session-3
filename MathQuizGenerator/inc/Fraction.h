@@ -74,6 +74,23 @@ public:
      * @return double 类型的小数值
      */
     double toDouble() const;
+
+
+
+
+    // 在 Fraction.h 的 public 部分添加：
+    /**
+     * @brief 获取分子
+     */
+    int getNumerator() const { return numerator; }
+
+    /**
+     * @brief 获取分母
+     */
+    int getDenominator() const { return denominator; }
+
+
+
 };
 
 #endif // FRACTION_H
