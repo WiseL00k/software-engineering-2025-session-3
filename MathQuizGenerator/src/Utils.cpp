@@ -1,30 +1,29 @@
+// Utils.cpp
 #include "Utils.h"
-#include <cstdlib>
-#include <ctime>
+#include <random>
 #include <sstream>
 
-int Utils::randInt(int max)
-{
-    static bool seeded = false;
-    if (!seeded)
-    {
-        std::srand(static_cast<unsigned int>(std::time(nullptr)));
-        seeded = true;
-    }
-    return std::rand() % max;
-}
+using namespace std;
 
+namespace Utils {
+    random_device rd;
+    mt19937 gen(rd());
 
-std::vector<std::string> split(const std::string& s, char delimiter)
-{
-    std::vector<std::string> tokens;
-    std::stringstream ss(s);
-    std::string item;
-
-    while (std::getline(ss, item, delimiter))
-    {
-        tokens.push_back(item);
+    int randInt(int max) {
+        if (max <= 0) return 0;
+        uniform_int_distribution<> dis(0, max - 1);
+        return dis(gen);
     }
 
-    return tokens;
+    vector<string> split(const string& s, char delimiter) {
+        vector<string> tokens;
+        string token;
+        istringstream tokenStream(s);
+
+        while (getline(tokenStream, token, delimiter)) {
+            tokens.push_back(token);
+        }
+
+        return tokens;
+    }
 }
