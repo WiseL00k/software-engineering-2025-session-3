@@ -40,7 +40,7 @@ void AnswerChecker::checkAnswers(const std::string& exerciseFile,
 
     std::vector<std::string> correctAnswers; ///< 标准答案列表
     std::vector<std::string> userAnswers;    ///< 用户答案列表
-
+  
     std::string line;
     // === 读取标准答案文件 ===
     while (std::getline(exFile, line)) {
@@ -80,10 +80,15 @@ void AnswerChecker::checkAnswers(const std::string& exerciseFile,
     }
 
     // === 输出结果 ===
-    outFile << "Correct: ";
-    for (int id : correctIds)
-        outFile << id << " ";
-    outFile << "\n";
+    outFile << "Correct: " << correctIds.size() << "(";
+    auto it = correctIds.begin();
+    while (it != correctIds.end()) {
+        outFile << *it;
+        if (++it != correctIds.end()) {
+            outFile << ",";
+        }
+    }
+    outFile << ")\n";
 
     outFile << "Wrong: ";
     for (int id : wrongIds)
