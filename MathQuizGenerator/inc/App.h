@@ -6,7 +6,6 @@
 #ifndef APP_H
 #define APP_H
 
-#include <string>
 #include "QuizGenerator.h"
 #include "AnswerChecker.h"
 
@@ -39,11 +38,19 @@ public:
      *
      * 调用题目生成、答题、判分等模块，控制整个程序执行。
      */
-    void run();
+    void run() const;
+    
+    /**
+     * @brief 程序使用帮助
+     *
+     */
+    void printHelp() const;
 private:
     int n;      ///< 要生成的题目数量
     int r;      ///< 操作数的取值范围
     bool valid; ///< 标记参数是否合法
+    std::string exerciseFile;
+    std::string answerFile;
 };
 
 #endif // APP_H
