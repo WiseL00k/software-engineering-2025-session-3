@@ -5,10 +5,6 @@
 
 using namespace std;
 
-QuizGenerator::QuizGenerator(int n, int r) : numQuestions(n), range(r) {
-    cout << "QuizGenerator 构造函数被调用: n=" << n << ", r=" << r << endl;
-}
-
 void QuizGenerator::generateAll() {
     cout << "开始生成 " << numQuestions << " 道题目..." << endl;
 
