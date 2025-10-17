@@ -132,7 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="QuizGenerator.cpp" />
+    <ClCompile Include="src\QuizGenerator.cpp" />
     <ClCompile Include="src\AnswerChecker.cpp" />
     <ClCompile Include="src\App.cpp" />
     <ClCompile Include="src\Expression.cpp" />
@@ -146,7 +146,6 @@
     <ClInclude Include="inc\Expression.h" />
     <ClInclude Include="inc\Fraction.h" />
     <ClInclude Include="inc\Utils.h" />
-    <ClInclude Include="QuizGenerator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
