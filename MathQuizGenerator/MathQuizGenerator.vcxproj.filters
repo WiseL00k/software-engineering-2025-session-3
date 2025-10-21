@@ -18,12 +18,6 @@
     <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\QuizGenerator.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="inc\QuizGenerator.h">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="src\Fraction.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -37,6 +31,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\App.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuizGenerator.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

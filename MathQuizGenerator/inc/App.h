@@ -1,3 +1,4 @@
+
 /**
  * @file App.h
  * @brief 定义程序主类 App，负责命令行解析、模块调度与整体运行逻辑。
@@ -6,7 +7,6 @@
 #ifndef APP_H
 #define APP_H
 
-#include <string>
 #include "QuizGenerator.h"
 #include "AnswerChecker.h"
 
@@ -39,11 +39,22 @@ public:
      *
      * 调用题目生成、答题、判分等模块，控制整个程序执行。
      */
-    void run();
+    void run() const;
+    
+    /**
+     * @brief 程序使用帮助
+     *
+     */
+    void printHelp() const;
 private:
     int n;      ///< 要生成的题目数量
     int r;      ///< 操作数的取值范围
     bool valid; ///< 标记参数是否合法
+    std::string exerciseFile;  ///< 题目文件路径（用于批改模式）
+    std::string answerFile;    ///< 答案文件路径（用于批改模式）
+
 };
 
 #endif // APP_H
+
+

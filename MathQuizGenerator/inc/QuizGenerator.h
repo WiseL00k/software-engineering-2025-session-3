@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include "Expression.h"
 
  /**
@@ -26,7 +27,7 @@ public:
      * @param n 要生成的题目数量
      * @param r 数值范围
      */
-    QuizGenerator(int n, int r);
+    QuizGenerator(int n, int r) : numQuestions(n), range(r) {};
 
     /**
      * @brief 生成所有题目
@@ -46,4 +47,4 @@ public:
     void saveAnswers(const std::string& filename = "Answers.txt") const;
 };
 
-#endif // QUIZ_GENERATOR_H
+#endif // QUIZ_GENERATOR_H#pragma once

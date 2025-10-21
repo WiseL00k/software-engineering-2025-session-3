@@ -7,6 +7,7 @@
 #define EXPRESSION_H
 
 #include <string>
+#include <stack>
 #include "Fraction.h"
 
  /**
@@ -18,6 +19,22 @@ private:
     std::string exprStr; ///< 表达式的字符串形式
     Fraction result;     ///< 表达式的计算结果
 
+
+    // 在 Expression.h 的 private 部分添加：
+    /**
+     * @brief 执行运算操作
+     */
+    static void performOperation(std::stack<Fraction>& numStack, std::stack<char>& opStack);
+
+    /**
+     * @brief 获取运算符优先级
+     */
+    static int getPrecedence(char op);
+
+    /**
+     * @brief 解析分数字符串
+     */
+    static Fraction parseFraction(const std::string& str);
 public:
     /**
      * @brief 构造一个空的表达式
@@ -52,6 +69,11 @@ public:
      * @brief 获取表达式的结果
      */
     Fraction getResult() const;
+
+    /**
+     * @brief 将字符串表达式转化为程序可识别表达式
+     */
+    std::string convertDisplayToCalculation(const std::string& displayStr);
 };
 
 #endif // EXPRESSION_H

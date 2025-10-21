@@ -6,6 +6,7 @@
 #ifndef ANSWER_CHECKER_H
 #define ANSWER_CHECKER_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 
