@@ -69,6 +69,11 @@ public:
      * @brief 获取表达式的结果
      */
     Fraction getResult() const;
+
+    /**
+     * @brief 将字符串表达式转化为程序可识别表达式
+     */
+    std::string convertDisplayToCalculation(const std::string& displayStr);
 };
 
 #endif // EXPRESSION_H

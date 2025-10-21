@@ -1,4 +1,5 @@
 ﻿#include "AnswerChecker.h"
+#include "Expression.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -42,16 +43,29 @@ void AnswerChecker::checkAnswers(const std::string& exerciseFile,
     std::vector<std::string> userAnswers;    ///< 用户答案列表
   
     std::string line;
-    // === 读取标准答案文件 ===
+    // === 通过题目文件计算标准答案 ===
     while (std::getline(exFile, line)) {
         // 格式: "1. 3 + 5 = 8"
-        auto pos = line.find('=');
-        if (pos != std::string::npos) {
-            std::string ans = line.substr(pos + 1);
-            // 去除空格
-            ans.erase(0, ans.find_first_not_of(" \t"));
-            ans.erase(ans.find_last_not_of(" \t") + 1);
-            correctAnswers.push_back(ans);
+        auto equal_pos = line.find('=');
+        auto point_pos = line.find('.');
+        if (equal_pos != std::string::npos) {
+            // 提取点号后面的表达式部分（从点号+1的位置开始）
+            std::string exprStr = line.substr(point_pos + 1, equal_pos - point_pos - 1);
+            // 去除表达式开头和结尾的空格
+            exprStr.erase(0, exprStr.find_first_not_of(" \t"));
+            exprStr.erase(exprStr.find_last_not_of(" \t") + 1);
+            std::cout << exprStr << std::endl;
+            for (size_t i = 0; i < exprStr.length(); i++) {
+                if (exprStr[i] == '×') {
+                    exprStr[i] = '*';
+                }
+                else if (exprStr[i] == '÷') {
+                    exprStr[i] = '/';
+                }
+            }
+            std::cout << exprStr << std::endl;
+            Expression expr(exprStr);
+            correctAnswers.push_back(expr.getResult().toString());
         }
     }
 

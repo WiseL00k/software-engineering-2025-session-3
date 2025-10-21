@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Expression::Expression(const string& exp) : exprStr(exp) {
+Expression::Expression(const string& exp) : exprStr(convertDisplayToCalculation(exp)) {
     result = evaluate();
 }
 
@@ -333,4 +333,24 @@ string Expression::toString() const {
 
 Fraction Expression::getResult() const {
     return result;
+}
+
+std::string Expression::convertDisplayToCalculation(const std::string& displayStr) {
+    std::string calcStr = displayStr;
+
+    // 替换所有 × 为 *
+    size_t pos = 0;
+    while ((pos = calcStr.find('×', pos)) != std::string::npos) {
+        calcStr.replace(pos, 1, "*");
+        pos += 1; // 只需要前进1位，因为替换后长度不变
+    }
+
+    // 替换所有 ÷ 为 /
+    pos = 0;
+    while ((pos = calcStr.find('÷', pos)) != std::string::npos) {
+        calcStr.replace(pos, 1, "/");
+        pos += 1;
+    }
+
+    return calcStr;
 }

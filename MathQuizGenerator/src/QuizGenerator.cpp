@@ -26,7 +26,7 @@ void QuizGenerator::generateAll() {
                 if (result.toDouble() >= 0) {
                     quizzes.push_back(expr);
                     existingExpressions.insert(exprStr);
-                    cout << "生成题目 " << quizzes.size() << ": " << exprStr << endl;
+                    cout << "生成题目 " << quizzes.size() << ":" << exprStr << endl;
                 }
             }
             catch (...) {
