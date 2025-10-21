@@ -54,7 +54,6 @@ void AnswerChecker::checkAnswers(const std::string& exerciseFile,
             // 去除表达式开头和结尾的空格
             exprStr.erase(0, exprStr.find_first_not_of(" \t"));
             exprStr.erase(exprStr.find_last_not_of(" \t") + 1);
-            std::cout << exprStr << std::endl;
             for (size_t i = 0; i < exprStr.length(); i++) {
                 if (exprStr[i] == '×') {
                     exprStr[i] = '*';
@@ -63,7 +62,6 @@ void AnswerChecker::checkAnswers(const std::string& exerciseFile,
                     exprStr[i] = '/';
                 }
             }
-            std::cout << exprStr << std::endl;
             Expression expr(exprStr);
             correctAnswers.push_back(expr.getResult().toString());
         }
